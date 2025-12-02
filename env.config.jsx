@@ -1,4 +1,5 @@
 import React from 'react';
+import { getConfig } from '@edx/frontend-platform';
 import { useNavigate } from 'react-router-dom';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { Avatar, Dropdown } from '@openedx/paragon';
@@ -25,6 +26,8 @@ const UserToggle = React.forwardRef(({ children, onClick, style, onMouseEnter, o
 const CustomHeader = ({ courseTitle }) => {
     const navigate = useNavigate();
     const user = getAuthenticatedUser();
+    const { LMS_BASE_URL, ACCOUNT_PROFILE_URL, LOGOUT_URL } = getConfig(); 
+
 
     const styles = {
         header: {
@@ -192,7 +195,7 @@ const CustomHeader = ({ courseTitle }) => {
             </div>
 
       <div style={styles.centerSection} className='logo-section'>
-        <a href="/dashboard">
+        <a href={`${LMS_BASE_URL}/dashboard`}>
           <img src="/static/logo.webp" alt="Logo" className="logo-hover logo-img" style={styles.logo} />
         </a>
       </div>            <div style={styles.rightSection}>
@@ -214,10 +217,10 @@ const CustomHeader = ({ courseTitle }) => {
                     </Dropdown.Toggle>
  
                     <Dropdown.Menu align="right" className="custom-dropdown-menu" style={styles.dropdownMenu}>
-                        <Dropdown.Item className="custom-dropdown-item" href="/" style={styles.dropdownItem}>Inicio</Dropdown.Item>
-                        <Dropdown.Item className="custom-dropdown-item" href="/learner-dashboard/" style={styles.dropdownItem}>Mis cursos</Dropdown.Item>
-                        <Dropdown.Item className="custom-dropdown-item" href={`/profile/u/${user?.username}`} style={styles.dropdownItem}>Perfil</Dropdown.Item>
-                        <Dropdown.Item className="custom-dropdown-item" href="/logout" style={styles.dropdownItem}>Cerrar sesión</Dropdown.Item>
+                        <Dropdown.Item className="custom-dropdown-item" href={`${LMS_BASE_URL}/`} style={styles.dropdownItem}>Inicio</Dropdown.Item>
+                        <Dropdown.Item className="custom-dropdown-item" href={`${LMS_BASE_URL}/dashboard`} style={styles.dropdownItem}>Mis cursos</Dropdown.Item>
+                        <Dropdown.Item className="custom-dropdown-item" href={`${ACCOUNT_PROFILE_URL}/u/${user?.username}`} style={styles.dropdownItem}>Perfil</Dropdown.Item>
+                        <Dropdown.Item className="custom-dropdown-item" href={`${LOGOUT_URL}`} style={styles.dropdownItem}>Cerrar sesión</Dropdown.Item>
                     </Dropdown.Menu>
                     
                 </Dropdown>
