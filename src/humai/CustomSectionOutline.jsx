@@ -1,16 +1,16 @@
 import React from 'react';
 import Section from '@src/course-home/outline-tab/section-outline/Section';
 
-const CustomSectionOutline = ({ sectionIds, sections, expandAll }) => (
+const CustomSectionOutline = (props) => (
     <>
         <h1 className="d-xl-none">ee</h1>
         <ol id="courseHome-outline" className="list-unstyled" style={{ paddingBottom: "10dvh" }}>
-            {sectionIds.map((sectionId) => (
+            {props.sectionIds.map((sectionId) => (
                 <Section
                     key={sectionId}
-                    defaultOpen={sections[sectionId].resumeBlock}
-                    expand={expandAll}
-                    section={sections[sectionId]}
+                    defaultOpen={props.sections[sectionId].resumeBlock}
+                    expand={props.expandAll}
+                    section={props.sections[sectionId]}
                 />
             ))}
         </ol>
@@ -18,4 +18,3 @@ const CustomSectionOutline = ({ sectionIds, sections, expandAll }) => (
 );
 
 export default CustomSectionOutline;
-

@@ -216,8 +216,6 @@ const CustomHeader = ({ courseTitle }) => {
  
                     <Dropdown.Menu align="right" className="custom-dropdown-menu" style={styles.dropdownMenu}>
                         <Dropdown.Item className="custom-dropdown-item" href={`${LMS_BASE_URL}/`} style={styles.dropdownItem}>Inicio</Dropdown.Item>
-                        <Dropdown.Item className="custom-dropdown-item" href={`${LMS_BASE_URL}/dashboard`} style={styles.dropdownItem}>Mis cursos</Dropdown.Item>
-                        <Dropdown.Item className="custom-dropdown-item" href={`${ACCOUNT_PROFILE_URL}/u/${user?.username}`} style={styles.dropdownItem}>Perfil</Dropdown.Item>
                         <Dropdown.Item className="custom-dropdown-item" href={`${LOGOUT_URL}`} style={styles.dropdownItem}>Cerrar sesión</Dropdown.Item>
                     </Dropdown.Menu>
                     
@@ -228,4 +226,3 @@ const CustomHeader = ({ courseTitle }) => {
 };
 
 export default CustomHeader;
-
