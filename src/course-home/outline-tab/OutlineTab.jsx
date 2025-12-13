@@ -27,6 +27,7 @@ import WelcomeMessage from './widgets/WelcomeMessage';
 import ProctoringInfoPanel from './widgets/ProctoringInfoPanel';
 import AccountActivationAlert from '../../alerts/logistration-alert/AccountActivationAlert';
 import CourseHomeSectionOutlineSlot from '../../plugin-slots/CourseHomeSectionOutlineSlot';
+import CustomButton from '../../humai/CustomButton';
 
 const OutlineTab = () => {
   const intl = useIntl();
@@ -133,7 +134,7 @@ const OutlineTab = () => {
             }}
           />
         </div>
-        <div className="col col-12 col-md-8">
+        <div className="col col-12 mx-auto">
           <AlertList
             topic="outline-course-alerts"
             className="mb-3"
@@ -156,9 +157,9 @@ const OutlineTab = () => {
             <>
               <div id="expand-button-row" className="row w-100 m-0 mb-3 justify-content-end">
                 <div className="col-12 col-md-auto p-0">
-                  <Button ref={expandButtonRef} variant="outline-primary" block onClick={() => { setExpandAll(!expandAll); }}>
+                  <CustomButton ref={expandButtonRef} customVariant="purple-transparent" block onClick={() => { setExpandAll(!expandAll); }}>
                     {expandAll ? intl.formatMessage(messages.collapseAll) : intl.formatMessage(messages.expandAll)}
-                  </Button>
+                  </CustomButton>
                 </div>
               </div>
               <CourseHomeSectionOutlineSlot
@@ -169,11 +170,12 @@ const OutlineTab = () => {
             </>
           )}
         </div>
+        {/* 
+        
         {rootCourseId && (
           <div className="col col-12 col-md-4">
             <ProctoringInfoPanel />
-            { /** Defer showing the goal widget until the ProctoringInfoPanel has resolved or has been determined as
-             disabled to avoid components bouncing around too much as screen is rendered */ }
+    
             {(!enableProctoredExams || proctoringPanelStatus === 'loaded') && weeklyLearningGoalEnabled && (
               <WeeklyLearningGoalCard
                 daysPerWeek={selectedGoal && 'daysPerWeek' in selectedGoal ? selectedGoal.daysPerWeek : null}
@@ -186,6 +188,7 @@ const OutlineTab = () => {
             <CourseHandouts />
           </div>
         )}
+         */}
       </div>
     </>
   );

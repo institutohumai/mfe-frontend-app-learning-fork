@@ -1,11 +1,12 @@
 import React from 'react';
-import { Button, Card } from '@openedx/paragon';
+import { Card } from '@openedx/paragon';
 import { useIntl } from '@edx/frontend-platform/i18n';
 
 import { useSelector } from 'react-redux';
 import { sendTrackingLogEvent } from '@edx/frontend-platform/analytics';
 import messages from '../messages';
 import { useModel } from '../../../generic/model-store';
+import CustomButton from '../../../humai/CustomButton';
 
 const StartOrResumeCourseCard = () => {
   const intl = useIntl();
@@ -46,14 +47,14 @@ const StartOrResumeCourseCard = () => {
       <Card.Header
         title={hasVisitedCourse ? intl.formatMessage(messages.resumeBlurb) : intl.formatMessage(messages.startBlurb)}
         actions={(
-          <Button
+          <CustomButton
             variant="brand"
             block
             href={resumeCourseUrl}
             onClick={() => logResumeCourseClick()}
           >
             {hasVisitedCourse ? intl.formatMessage(messages.resume) : intl.formatMessage(messages.start)}
-          </Button>
+          </CustomButton>
         )}
       />
       {/* Footer is needed for internal vertical spacing to work out. If you can remove, be my guest */}

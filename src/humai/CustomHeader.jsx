@@ -138,6 +138,9 @@ const CustomHeader = ({ courseTitle }) => {
           transform: translateY(0);
         }
       }
+      .custom-dropdown-item {
+        color: #ffffff !important;
+      }
       .custom-dropdown-item:hover, .custom-dropdown-item:focus {
         background-color: rgba(245, 148, 16, 0.15) !important;
         color: #F59410 !important;
