@@ -29,6 +29,15 @@ const config = {
                 }
             ]
         },
+        'org.openedx.frontend.learning.progress_tab_related_links.v1': {
+            plugins: [
+                {
+                    // Hide
+                    op: PLUGIN_OPERATIONS.Hide,
+                    widgetId: 'progress_tab_related_links',
+                },
+            ]
+        },
         'org.openedx.frontend.learning.course_home_section_outline.v1': {
             keepDefault: false,
             plugins: [
