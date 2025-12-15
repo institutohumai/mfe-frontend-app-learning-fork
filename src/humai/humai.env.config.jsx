@@ -34,7 +34,7 @@ const config = {
                 {
                     // Hide
                     op: PLUGIN_OPERATIONS.Hide,
-                    widgetId: 'progress_tab_related_links',
+                    widgetId: 'default_contents',
                 },
             ]
         },
