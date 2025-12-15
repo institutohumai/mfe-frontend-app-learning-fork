@@ -196,7 +196,7 @@ const CustomHeader = ({ courseTitle }) => {
             </div>
 
       <div style={styles.centerSection} className='logo-section'>
-        <a href={`${LMS_BASE_URL}/dashboard`}>
+        <a href={`https://panel.humai.lat/`}>
           <img src="/static/logo.webp" alt="Logo" className="logo-hover logo-img" style={styles.logo} />
         </a>
       </div>            <div style={styles.rightSection}>
@@ -218,8 +218,10 @@ const CustomHeader = ({ courseTitle }) => {
                     </Dropdown.Toggle>
  
                     <Dropdown.Menu align="right" className="custom-dropdown-menu" style={styles.dropdownMenu}>
-                        <Dropdown.Item className="custom-dropdown-item" href={`${LMS_BASE_URL}/`} style={styles.dropdownItem}>Inicio</Dropdown.Item>
-                        <Dropdown.Item className="custom-dropdown-item" href={`${LOGOUT_URL}`} style={styles.dropdownItem}>Cerrar sesión</Dropdown.Item>
+                        {/* <Dropdown.Item className="custom-dropdown-item" href={`${LMS_BASE_URL}/`} style={styles.dropdownItem}>Inicio</Dropdown.Item>
+                        <Dropdown.Item className="custom-dropdown-item" href={`${LOGOUT_URL}`} style={styles.dropdownItem}>Cerrar sesión</Dropdown.Item> */}
+                         <Dropdown.Item className="custom-dropdown-item" href={`https://panel.humai.lat/`} style={styles.dropdownItem}>Inicio</Dropdown.Item>
+                        <Dropdown.Item className="custom-dropdown-item" href={`https://panel.humai.lat/logout`} style={styles.dropdownItem}>Cerrar sesión</Dropdown.Item>
                     </Dropdown.Menu>
                     
                 </Dropdown>
