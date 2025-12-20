@@ -3,7 +3,6 @@ import Section from '@src/course-home/outline-tab/section-outline/Section';
 
 const CustomSectionOutline = (props) => (
     <>
-        <h1 className="d-xl-none">ee</h1>
         <ol id="courseHome-outline" className="list-unstyled" style={{ paddingBottom: "10dvh" }}>
             {props.sectionIds.map((sectionId) => (
                 <Section
